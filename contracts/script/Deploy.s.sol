@@ -31,5 +31,14 @@ contract DeployScript is Script {
         console.log("PredictionMarket deployed at:", address(market));
 
         vm.stopBroadcast();
+
+        // Print addresses for verification
+        console.log("=== Contract Addresses for Verification ===");
+        console.log("ORACLE_ADDRESS=", address(oracle));
+        console.log("DISPUTE_MANAGER_ADDRESS=", address(disputeManager));
+        console.log("MARKET_ADDRESS=", address(market));
+        console.log("ORACLE_SIGNER=", signer);
+        console.log("");
+        console.log("To verify contracts, run: ./verify.sh <ORACLE_ADDRESS> <DISPUTE_MANAGER_ADDRESS> <MARKET_ADDRESS> <ORACLE_SIGNER>");
     }
 }
